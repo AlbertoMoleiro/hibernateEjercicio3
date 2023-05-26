@@ -23,7 +23,7 @@ public class Temporada {
     @Column(nullable = false)
     private Integer fin;
 
-    @ManyToMany(mappedBy = "temporadas")
+    @ManyToMany(mappedBy = "temporadas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Piloto> pilotos;
 
 }
